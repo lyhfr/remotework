@@ -50,6 +50,7 @@ func main() {
 	}
 	go serveFlex(sw, flexListener, config.Server.Password)
 	go serveHTTP(sw, httpListener, config.Server.WsPath)
+	go serveNotify(sw)
 
 	mxl.Run()
 	log.Println("server stopped")
